@@ -1,4 +1,3 @@
-import React from 'react';
 import { View, TextInput, StyleSheet, Dimensions } from 'react-native';
 import { Ionicons } from "@expo/vector-icons";
 const { width: screenWidth } = Dimensions.get('window');
@@ -21,7 +20,7 @@ const SearchBox = () => {
 
 const styles = StyleSheet.create({
     searchContainer: {
-        height: 60,
+        height: 56,
         borderRadius: 28,
         flexDirection: 'row',
         alignItems: 'center',

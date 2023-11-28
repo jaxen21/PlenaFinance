@@ -1,4 +1,3 @@
-import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import SearchBox from './SearchBox';
 import DeliveryBox from './DeliveryBox';
@@ -24,16 +23,16 @@ const Header = ({ navigation }) => {
 
 const styles = StyleSheet.create({
     container: {
-        borderTopLeftRadius: 25,
-        borderTopRightRadius: 25,
+        borderTopLeftRadius: 22,
+        borderTopRightRadius: 22,
         alignItems: "center",
         backgroundColor: "#2A4BA0",
-        height: "30%",
+        height: 250,
+        paddingTop: screenHeight * 0.07
     },
     userCartContainer: {
         width: screenWidth * 0.9,
         height: 30,
-        marginTop: screenHeight * 0.08,
         flexDirection: "row",
         justifyContent: 'space-between',
         alignItems: 'center',
@@ -42,16 +41,16 @@ const styles = StyleSheet.create({
         color: '#F8F9FB',
         fontSize: 0.04 * screenWidth,
         fontStyle: 'normal',
-        fontWeight: '600',
+        fontWeight: "bold",
         lineHeight: undefined,
     },
     searchContainer: {
-        marginTop: screenHeight * 0.03,
+        marginTop: 34,
         alignItems: 'center',
     },
     deliveryContainer: {
         flex: 1,
-        marginTop: screenHeight * 0.03,
+        marginTop: 27,
         display: "flex",
         alignItems: "center",
     }

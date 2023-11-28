@@ -1,5 +1,5 @@
-import { StyleSheet, View, Dimensions, ScrollView } from "react-native"
 import ProductCard from "./ProductCard"
+import { StyleSheet, View, Dimensions, ScrollView } from "react-native"
 const { width: screenWidth } = Dimensions.get('window');
 
 const Body = ({ navigation, products }) => {

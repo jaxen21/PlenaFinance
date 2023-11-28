@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { TouchableOpacity, View, Text, StyleSheet } from "react-native";
 import { CartContext } from "../../contexts/CartContext";
 import { Ionicons } from "@expo/vector-icons";

@@ -1,4 +1,3 @@
-import React from 'react';
 import Swiper from 'react-native-swiper';
 import { View, Image, StyleSheet, Dimensions } from 'react-native';
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');

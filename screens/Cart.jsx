@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import CartItemCard from "../components/CartItemCard";
+import Button from "../components/Button";
 import { CartContext } from "../contexts/CartContext";
-import CheckoutButton from "../components/CheckoutButton";
-import { StyleSheet, View, Dimensions, Text, ScrollView } from "react-native";
+import CartItemCard from "../components/CartItemCard";
 import BackButton from "../components/iconButtons/BackButton"
+import { StyleSheet, View, Dimensions, Text, ScrollView } from "react-native";
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
 const Cart = ({ navigation }) => {
@@ -45,7 +45,11 @@ const Cart = ({ navigation }) => {
                     <Text style={style.checkoutText}>Subtotal</Text>
                     <Text>${cartTotal + deliveryCharges}</Text>
                 </View>
-                <CheckoutButton />
+                <Button
+                    style={{ width: screenWidth * 0.8, marginTop: 5, alignSelf: "center" }}
+                    title={"Proceed to Checkout"}
+                // onPress={}
+                />
             </View>
         </View>
     )
@@ -69,7 +73,6 @@ const style = StyleSheet.create({
         alignItems: "center"
     },
     cartHeaderTitle: {
-        fontWeight: 400,
         fontSize: 16,
         textAlign: "center",
         paddingHorizontal: screenWidth * 0.23

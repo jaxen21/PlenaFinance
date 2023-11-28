@@ -1,4 +1,3 @@
-import React from "react"
 import { View, StyleSheet, Text, TouchableOpacity, Dimensions } from "react-native"
 import { Ionicons } from "@expo/vector-icons";
 const { width: screenWidth } = Dimensions.get('window');
@@ -15,7 +14,7 @@ const DeliveryBox = () => {
                     </View>
                 </TouchableOpacity>
             </View>
-            <View>
+            <View style={{ marginTop: 4 }}>
                 <Text style={styles.headingText}>Within</Text>
                 <TouchableOpacity>
                     <View style={styles.valueBox}>
@@ -30,6 +29,7 @@ const DeliveryBox = () => {
 
 const styles = StyleSheet.create({
     deliveryContainer: {
+        height: 38,
         display: "flex",
         flexDirection: "row",
         width: screenWidth * 0.9,
@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
     },
     headingText: {
         color: '#8891A5',
-        textTransform: "uppercase"
+        textTransform: "uppercase",
+        fontSize: 11
     },
     valueBox: {
         display: "flex",

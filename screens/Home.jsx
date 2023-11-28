@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
-import Header from '../components/Header';
 import Body from '../components/Body';
+import Header from '../components/Header';
 import TabBar from '../components/TabBar';
+import { useEffect, useState } from 'react';
+import { View, StyleSheet, Dimensions } from 'react-native';
 const { width: screenWidth } = Dimensions.get('window');
 
 const Home = ({ navigation }) => {
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     container: {
         width: screenWidth,
         backgroundColor: "#fff",
-        borderRadius: 25,
+        borderRadius: 20,
         flex: 1,
     },
 })

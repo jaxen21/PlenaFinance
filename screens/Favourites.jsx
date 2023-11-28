@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { StyleSheet, Text, Dimensions, View } from "react-native";
-import { FavoriteContext } from "../contexts/FavouriteContext";
 import BackButton from "../components/iconButtons/BackButton";
+import FavoriteItemCard from "../components/FavouriteItemCard";
+import { FavoriteContext } from "../contexts/FavouriteContext";
+import { StyleSheet, Text, Dimensions, View, ScrollView } from "react-native";
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
 const Favourites = ({ navigation }) => {
@@ -16,6 +17,18 @@ const Favourites = ({ navigation }) => {
                     Favourites ({favoriteItems.length})
                 </Text>
             </View>
+            <ScrollView>
+                <View style={style.FavouriteItemsContainer}>
+                    {favoriteItems.map((favoriteItem) => (
+                        <View key={favoriteItem.id}>
+                            <FavoriteItemCard
+                                favoriteItem={favoriteItem}
+                            />
+                            <View style={style.FavouriteItemDivider} />
+                        </View>
+                    ))}
+                </View>
+            </ScrollView>
         </View>
     )
 }
@@ -38,10 +51,22 @@ const style = StyleSheet.create({
         alignItems: "center"
     },
     FavouriteHeaderTitle: {
-        fontWeight: 400,
+        fontWeight: "normal",
         fontSize: 16,
         textAlign: "center",
         paddingHorizontal: screenWidth * 0.23
+    },
+    FavouriteItemsContainer: {
+        display: "flex",
+        flexDirection: "column",
+        marginTop: 30
+    },
+    FavouriteItemDivider: {
+        borderWidth: 0.5,
+        borderColor: "#EBEBFB",
+        width: screenWidth * 0.8,
+        alignSelf: "center",
+        marginTop: 15,
     },
 })
 

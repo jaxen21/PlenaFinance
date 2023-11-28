@@ -38,7 +38,7 @@ const ProductCard = ({ navigation, product }) => {
                 <View style={style.productDetailContainer}>
                     <View style={style.productDetail}>
                         <Text style={style.productPrice}>{`$${price}`}</Text>
-                        <Text style={style.productTitle}>{title}</Text>
+                        <Text numberOfLines={1} style={style.productTitle}>{title}</Text>
                     </View>
                     <AddToCartIconButton onPressHandler={addProductToCart} />
                 </View>
@@ -78,7 +78,6 @@ const style = StyleSheet.create({
         fontSize: 14,
     },
     productTitle: {
-        fontWeight: 400,
         fontStyle: "normal",
         fontSize: 12,
     },

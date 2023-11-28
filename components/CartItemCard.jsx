@@ -8,23 +8,23 @@ const CartItemCard = ({ cartItem }) => {
     const { title, price, thumbnail, quantity } = cartItem
     const { addItemToCart, removeItemFromCart } = useContext(CartContext);
 
-    // const clearItemHandler = () => clearItemFromCart(cartItem);
     const addItemHandler = () => addItemToCart(cartItem);
     const removeItemHandler = () => removeItemFromCart(cartItem);
+
     return (
         <View style={style.cartItemContainer}>
             <Image
                 style={style.thumbnail}
                 source={{ uri: thumbnail }}
             />
-            <View style={style.detialContaiiner}>
-                <Text style={style.productTitle}>{title}</Text>
+            <View style={style.detailContainer}>
+                <Text numberOfLines={1} style={style.productTitle}>{title}</Text>
                 <Text style={style.productPrice}>{`$${price}`}</Text>
             </View>
             <TouchableOpacity onPress={removeItemHandler}>
                 <Ionicons name="remove-circle-outline" style={style.iconStyle} />
             </TouchableOpacity>
-            <Text style={{ alignSelf: "center" }}>{quantity}</Text>
+            <Text style={style.quantityText}>{quantity}</Text>
             <TouchableOpacity onPress={addItemHandler}>
                 <Ionicons name="add-circle-outline" style={style.iconStyle} />
             </TouchableOpacity>
@@ -39,31 +39,35 @@ const style = StyleSheet.create({
         alignSelf: "center",
         display: "flex",
         flexDirection: "row",
-        justifyContent: "space-around"
+        justifyContent: "space-around",
+        alignItems: "center"
     },
     thumbnail: {
         width: 30,
         height: 30,
         alignSelf: "center",
     },
-    detialContaiiner: {
-        display: "flex",
-        flexDirection: "column",
+    detailContainer: {
+        marginLeft: 10,
         alignSelf: "center",
     },
     productTitle: {
-        fontWeight: 500,
+        fontWeight: 'bold',
         fontSize: 14,
+        width: 100,
     },
     productPrice: {
-        fontWeight: 400,
+        fontWeight: 'normal',
         fontSize: 14,
     },
     iconStyle: {
         alignSelf: "center",
         color: "#130F26",
         fontSize: 25
-    }
-})
+    },
+    quantityText: {
+        alignSelf: "center",
+    },
+});
 
 export default CartItemCard;

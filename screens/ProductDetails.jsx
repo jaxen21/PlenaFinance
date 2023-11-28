@@ -1,11 +1,12 @@
-import { useEffect, useState, useContext } from "react";
+import Button from "../components/Button";
 import RatingStar from "../components/RatingStar"
-import { View, StyleSheet, Dimensions, Text, ScrollView, Button } from "react-native";
+import { useEffect, useState, useContext } from "react";
 import { CartContext } from "../contexts/CartContext";
 import ImageCarousel from "../components/ImageCarousel";
 import BackButton from "../components/iconButtons/BackButton"
 import CartButton from "../components/iconButtons/CartButton"
 import { FavoriteContext } from "../contexts/FavouriteContext";
+import { View, StyleSheet, Dimensions, Text, ScrollView } from "react-native";
 import ToggleFavouriteButton from "../components/iconButtons/ToggleFavouriteButton";
 const { width: screenWidth, height: screenHeight } = Dimensions.get('window');
 
@@ -76,26 +77,15 @@ const ProductDetails = ({ navigation }) => {
                             </View>
                         </View>
                         <View style={style.buttonsContainer}>
-                            <View style={style.buttonBox}>
-                                <Button
-                                    onPress={addProductToCart}
-                                    title="Add to Cart"
-                                    color="#2A4BA0"
-                                />
-                            </View>
-                            <View
-                                style={[style.buttonBox, {
-                                    backgroundColor: "#2A4BA0",
-                                    borderColor: "#2A4BA0",
-                                    borderWidth: 1,
-                                }]}
-                            >
-                                <Button
-                                    onPress={handleBuyNow}
-                                    title="Buy Now"
-                                    color="#FFFFFF"
-                                />
-                            </View>
+                            <Button
+                                title={"Add to Cart"}
+                                invert={true}
+                                onPress={addProductToCart}
+                            />
+                            <Button
+                                title={"Buy Now"}
+                                onPress={handleBuyNow}
+                            />
                         </View>
                         <View style={style.descriptionContainer}>
                             <Text style={style.descriptionHeading}>Details</Text>
@@ -135,7 +125,6 @@ const style = StyleSheet.create({
         display: "flex"
     },
     productTitle: {
-        fontWeight: 300,
         fontSize: screenWidth * 0.12,
     },
     productBrand: {
@@ -211,12 +200,12 @@ const style = StyleSheet.create({
         gap: 6
     },
     descriptionHeading: {
-        fontWeight: 400,
+        fontWeight: "bold",
         fontSize: 16,
         color: "#1E222B"
     },
     descriptionText: {
-        fontWeight: 400,
+        fontWeight: "normal",
         fontSize: 16,
         color: "#8891A5"
     }
